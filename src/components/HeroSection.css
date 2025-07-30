@@ -1,6 +1,6 @@
 .hero-section {
   position: relative;
-  width: 100%;
+  width: 100vh;
   height: 100vh;
   overflow: hidden;
   padding-left: 11rem;
