@@ -1,9 +1,9 @@
 import { useState} from 'react'
 import Navbar from './components/Navbar'
 import HeroSection from './components/HeroSection'
-import Scoreboard from './components/Scoreboard'
+import Contact from './components/Contact'
 import Sponsors from './components/Sponsors'
-import Support from './components/Support'
+import Leaderboard from './components/Leaderboard'
 import "./images/flipped-hero-image.png"
 import './style.css'
 import { BrowserRouter as Router, Routes, Route , useLocation } from 'react-router-dom';
@@ -19,9 +19,9 @@ function AppWrapper() {
         <Navbar />
         <Routes>
           <Route path="/" element={<HeroSection />} />
-          <Route path="/scoreboard" element={<Scoreboard />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/sponsors" element={<Sponsors />} />
-          <Route path="/support" element={<Support />} />
+          <Route path="/support" element={<Leaderboard />} />
         </Routes>
     </div>
   )

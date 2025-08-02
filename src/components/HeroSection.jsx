@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import h1 from '../images/flipped-hero-image.png';
 import icon from '../images/spy-without-bg.png';
 
 const HeroSection = () => {
+    useEffect(() => {
+        document.title = "Home - express";
+    }, []);
+
     return (
         <section
             className="relative w-screen h-screen overflow-hidden flex items-center pl-44 pt-16"
