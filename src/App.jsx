@@ -21,7 +21,7 @@ function AppWrapper() {
           <Route path="/" element={<HeroSection />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/sponsors" element={<Sponsors />} />
-          <Route path="/support" element={<Leaderboard />} />
+          <Route path="/leaderboard" element={<Leaderboard />} />
         </Routes>
     </div>
   )

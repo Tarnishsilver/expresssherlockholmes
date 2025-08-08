@@ -37,22 +37,22 @@ const Navbar = () => {
       {/* Desktop Navbar */}
       <header
         className={`hidden md:flex fixed top-0 left-0 w-full z-50 transition-all duration-300 
-        ${scrolled ? 'py-3 bg-[#1a1a1a]/90 backdrop-blur' : 'py-6 bg-transparent'}`}
+        ${scrolled ? 'pb-3 bg-[#1a1a1a]/90 backdrop-blur' : 'pb-6 bg-transparent'}`}
       >
         <div className="flex items-center justify-between w-full px-10">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <img src={logoImage} alt="Logo" className="h-10 w-auto" />
+            <img src={logoImage} alt="Logo" className="h-24 w-auto" />
           </div>
 
           {/* Nav Links */}
-          <nav className="flex space-x-6">
+          <nav className="flex space-x-16">
             {navLinks.map((link) => (
               <NavLink
                 key={link.path}
                 to={link.path}
                 className={({ isActive }) =>
-                  `text-base transition-colors duration-200 hover:text-white ${isActive ? 'text-yellow-400' : 'text-neutral-300'
+                  `text-md transition-colors duration-200 hover:text-white ${isActive ? 'text-yellow-400' : 'text-neutral-300'
                   }`
                 }
                 onClick={closeMenu}
@@ -64,7 +64,7 @@ const Navbar = () => {
 
           {/* Buttons */}
           <div className="flex space-x-4">
-            <button className="text-black font-semibold px-4 py-2 w-28 bg-[#facc15] rounded-3xl hover:bg-[#fde047] transition" onClick={handleRegister}>
+            <button className="text-black font-semibold px-4 py-2 w-28 bg-gradient-to-br from-[#725c03] via-[#ffd83e] to-[#806705] rounded-3xl hover:bg-[#fde047] transition" onClick={handleRegister}>
               Register
             </button>
           </div>
