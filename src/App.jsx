@@ -15,7 +15,7 @@ function AppWrapper() {
   const isHome = location.pathname === '/';
 
   return (
-    <div className={isHome ? 'h-screen w-screen overflow-hidden ': 'overflow-x-hidden '}>
+    <div className={isHome ? 'h-screen w-screen overflow-x-hidden ': 'overflow-x-hidden '}>
         <Navbar />
         <Routes>
           <Route path="/" element={<HeroSection />} />

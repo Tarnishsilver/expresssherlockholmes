@@ -1,19 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import logoImage from '../images/hero-without-bg.png';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
@@ -36,8 +27,7 @@ const Navbar = () => {
     <>
       {/* Desktop Navbar */}
       <header
-        className={`hidden md:flex fixed top-0 left-0 w-full z-50 transition-all duration-300 
-        ${scrolled ? 'pb-3 bg-[#1a1a1a]/90 backdrop-blur' : 'pb-6 bg-transparent'}`}
+        className="hidden md:flex fixed top-0 left-0 w-full z-50 pb-6 bg-transparent"
       >
         <div className="flex items-center justify-between w-full px-10">
           {/* Logo */}
@@ -52,7 +42,8 @@ const Navbar = () => {
                 key={link.path}
                 to={link.path}
                 className={({ isActive }) =>
-                  `text-md transition-colors duration-200 hover:text-white ${isActive ? 'text-yellow-400' : 'text-neutral-300'
+                  `text-md transition-colors duration-200 hover:text-white ${
+                    isActive ? 'text-yellow-400' : 'text-neutral-300'
                   }`
                 }
                 onClick={closeMenu}
@@ -64,7 +55,10 @@ const Navbar = () => {
 
           {/* Buttons */}
           <div className="flex space-x-4">
-            <button className="text-black font-semibold px-4 py-2 w-28 bg-gradient-to-br from-[#725c03] via-[#ffd83e] to-[#806705] rounded-3xl hover:bg-[#fde047] transition" onClick={handleRegister}>
+            <button
+              className="text-black font-semibold px-4 py-2 w-28 bg-gradient-to-br from-[#725c03] via-[#ffd83e] to-[#806705] rounded-3xl hover:bg-[#fde047] transition"
+              onClick={handleRegister}
+            >
               Register
             </button>
           </div>
@@ -84,8 +78,9 @@ const Navbar = () => {
 
         {/* Slide-in Menu */}
         <div
-          className={`fixed inset-0 bg-[#1a1a1a]/95 flex flex-col items-center justify-center space-y-8 z-40 transition-transform duration-300 ease-in-out transform ${isMenuOpen ? 'translate-y-0' : '-translate-y-full'
-            }`}
+          className={`fixed inset-0 bg-[#1a1a1a]/95 flex flex-col items-center justify-center space-y-8 z-40 transition-transform duration-300 ease-in-out transform ${
+            isMenuOpen ? 'translate-y-0' : '-translate-y-full'
+          }`}
         >
           <img src={logoImage} alt="Logo" className="h-14 w-auto" />
           {navLinks.map((link) => (
@@ -93,7 +88,8 @@ const Navbar = () => {
               key={link.path}
               to={link.path}
               className={({ isActive }) =>
-                `text-lg font-medium ${isActive ? 'text-yellow-400' : 'text-neutral-200'
+                `text-lg font-medium ${
+                  isActive ? 'text-yellow-400' : 'text-neutral-200'
                 } hover:text-white`
               }
               onClick={closeMenu}
@@ -102,7 +98,10 @@ const Navbar = () => {
             </NavLink>
           ))}
           <div className="flex space-x-4 pt-6">
-            <button className="text-black font-semibold px-4 py-2 w-28 bg-[#facc15] rounded-3xl hover:bg-[#fde047] transition" onClick={handleRegister}>
+            <button
+              className="text-black font-semibold px-4 py-2 w-28 bg-[#facc15] rounded-3xl hover:bg-[#fde047] transition"
+              onClick={handleRegister}
+            >
               Register
             </button>
           </div>
