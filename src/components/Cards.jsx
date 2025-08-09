@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 
 const FlipCard = ({ title, frontText, backText }) => {
@@ -6,8 +5,8 @@ const FlipCard = ({ title, frontText, backText }) => {
 
     const containerStyle = {
         width: "100%",
-        maxWidth: "300px", // like Tailwind w-64
-        aspectRatio: "4 / 5", // like h-80 (320px height for 256px width)
+        maxWidth: "280px", // Slightly smaller than before
+        aspectRatio: "4 / 5",
         cursor: "pointer",
         perspective: "1000px",
     };
@@ -33,7 +32,7 @@ const FlipCard = ({ title, frontText, backText }) => {
         justifyContent: "center",
         alignItems: "center",
         padding: "1.5rem",
-        color: "white",
+        color: "#d1d5db", // Light gray for body text
         backfaceVisibility: "hidden",
         WebkitBackfaceVisibility: "hidden",
     };
@@ -41,12 +40,40 @@ const FlipCard = ({ title, frontText, backText }) => {
     const frontStyle = {
         ...faceCommonStyle,
         backgroundColor: "#2a2a2a",
+        border: "2px solid #facc15"
     };
 
     const backStyle = {
         ...faceCommonStyle,
-        backgroundColor: "#2a2a2a", // gray-900
+        backgroundColor: "#2a2a2a",
+        border: "2px solid #facc15",
         transform: "rotateY(180deg)",
+    };
+
+    const titleStyle = {
+        fontSize: "1.25rem",
+        fontWeight: "700",
+        marginBottom: "0.5rem",
+        fontFamily: "serif", // Matching Veritas font
+        color: "#facc15", // Yellow color
+    };
+
+    const backTitleStyle = {
+        fontSize: "1.25rem",
+        fontWeight: "700",
+        marginBottom: "0.5rem",
+        fontFamily: "serif",
+        color: "#facc15",
+    };
+    
+    const textStyle = {
+        fontSize: "1rem",
+        color: "#d1d5db",
+    };
+    
+    const backTextStyle = {
+        fontSize: "0.8rem",
+        color: "#d1d5db",
     };
 
     return (
@@ -62,16 +89,16 @@ const FlipCard = ({ title, frontText, backText }) => {
         >
             <div style={innerStyle}>
                 <div style={frontStyle}>
-                    <h2 style={{ fontSize: "1.25rem", fontWeight: "700", marginBottom: "0.5rem" }}>
+                    <h2 style={titleStyle}>
                         {title}
                     </h2>
-                    <p>{frontText}</p>
+                    <p style={textStyle}>{frontText}</p>
                 </div>
                 <div style={backStyle}>
-                    <h2 style={{ fontSize: "1.25rem", fontWeight: "700", marginBottom: "0.5rem" }}>
+                    <h2 style={backTitleStyle}>
                         More Info
                     </h2>
-                    <p>{backText}</p>
+                    <p style={backTextStyle}>{backText}</p>
                 </div>
             </div>
         </div>
@@ -90,12 +117,33 @@ const FlipCardGrid = () => {
     }, []);
 
     const cards = [
-        { title: "Event 1", frontText: "Short description", backText: "Detailed explanation about Card 1." },
-        { title: "Event 2", frontText: "Short description", backText: "Detailed explanation about Card 2." },
-        { title: "Event 3", frontText: "Short description", backText: "Detailed explanation about Card 3." },
-        { title: "Event 4", frontText: "Short description", backText: "Detailed explanation about Card 4." },
-        { title: "Event 5", frontText: "Short description", backText: "Detailed explanation about Card 5." },
+        {
+            title: "Hounds of RhymeVille",
+            frontText: "Poetry is just deduction in disguise.",
+            backText: "Explore the rhythm and mystery of poetry, where every line hints at something deeper. Participants will present original pieces, whether emotional, observational, or witty. Just as Holmes reads between the lines, great poets reveal more than they say. Use your voice to turn verse into vision and let your message resonate."
+        },
+        {
+            title: "The Chronicles of 221B",
+            frontText: "Stories are just unsolved cases waiting for a mind to deduce them.",
+            backText: "Two voices, one story. In this event, duos bring stories to life through tone, expression, and pacing. Whether fiction or fact, a good story unravels like a case file, and a good storyteller guides the listener to every twist, much like a certain resident of 221B. Let your tale leave behind clues your audience won't forget."
+        },
+        {
+            title: "Instant Deduction",
+            frontText: "My mind rebels at stagnation. Improv is the only logical solution.",
+            backText: "With no script and limited prep time, participants must build scenes on the spot using prompts. The event tests wit, timing, and chemistry. In moments of chaos, quick thinking often reveals the most entertaining outcomes, not unlike solving a case under pressure. Expect the unexpected and respond like a detective in disguise."
+        },
+        {
+            title: "The Spoofy Scandals",
+            frontText: "Ridicule is a weapon too. Even Holmes couldn’t argue with satire.",
+            backText: "Teams perform humorous sketches that playfully mock situations, characters, or tropes. This is a space to reimagine mysteries through a lighter lens. A touch of absurdity, a clever twist, and a nod to the detective world can turn even the most serious plot into comedy. Make your audience laugh like they just uncovered a ridiculous clue."
+        },
+        {
+            title: "Battle of Baskervilles",
+            frontText: "The tongue is mightier than the blade.",
+            backText: "This structured debate challenges participants to argue with clarity, logic, and composure. Teams will present points, counter opposing views, and defend their stance. Like a true detective in discussion, the goal is to reveal the strongest argument through calm reasoning."
+        }
     ];
+    
 
     // Container styles for grid layout
     const gridContainerStyle = {
@@ -107,7 +155,7 @@ const FlipCardGrid = () => {
     // Styles for top row (3 cards)
     const topRowStyle = {
         display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(256px, 1fr))",
+        gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
         gap: "1.5rem",
     };
 
@@ -116,7 +164,7 @@ const FlipCardGrid = () => {
         display: "grid",
         gap: "1.5rem",
         margin: "1.5rem auto 0",
-        maxWidth: "600px",
+        maxWidth: "580px",
         gridTemplateColumns: isDesktop ? "repeat(2, 1fr)" : "1fr",
     };
 
