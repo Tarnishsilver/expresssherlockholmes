@@ -1,11 +1,9 @@
 import React, {useEffect} from 'react';
-import s from '../images/Sponsors.png'
-// import sponsor1 from '../images/sponsor1.png';
-// import sponsor2 from '../images/sponsor2.png';
-// import sponsor3 from '../images/sponsor3.png';
-// import sponsor4 from '../images/sponsor4.png';
-// import sponsor5 from '../images/sponsor5.png';
-// import sponsor6 from '../images/sponsor6.png';
+import fes from '../images/fesindia_logo.jpeg'; //sponser 1
+import omkar from '../images/omkar.png'; // sponser 2
+import travelis from '../images/travelis.png'; // sponser 3
+import redbull from '../images/redbull.jpeg'; // sponser 4
+import myntra from '../images/Myntra.png'; // sponser 5
 import smoke from '../images/smoke.gif';
 import bgImage from '../images/1d43bf935f386047db9c892e601491b4.jpg';
 import ScrollToTopButton from '../components/ScrollToTopButton.jsx'; 
@@ -14,44 +12,30 @@ const sponsors = [
   {
     id: 1,
     type: 'odd',
-    name: 'Alpha Corp',
-    image: s,
-    description: 'Alpha Corp is a global leader in technology and innovation, supporting students through scholarships and mentorships.Alpha Corp is a global leader in technology and innovation, supporting students through scholarships and mentorships.'
+    name: 'Fragomen',
+    image: fes,
+    description: 'Fragomen is the Sherlock Holmes of global immigration—skillfully navigating complex visa puzzles and uncovering seamless pathways for students and institutions alike. As your education partner, they solve every legal mystery with precision and expertise, ensuring your international journey unfolds without a hitch.'
   },
   {
     id: 2,
     type: 'even',
-    name: 'Beta Tech',
-    image: s,
-    description: 'Beta Tech empowers developers and creators by offering advanced cloud solutions and AI toolkits.Alpha Corp is a global leader in technology and innovation, supporting students through scholarships and mentorships.'
+    name: 'Omkar Snacks',
+    image: omkar,
+    description: 'Omkar Snacks is the Sherlock Holmes of flavor—expertly crafting each bite with the precision of a master detective uncovering hidden delights. As your food partner, they deliver irresistible snacks that solve the mystery of hunger, turning every craving into a satisfying revelation.'
   },
   {
     id: 3,
     type: 'odd',
-    name: 'Gamma Group',
-    image: s,
-    description: 'Gamma Group champions sustainability through green tech and renewable energy investments.Alpha Corp is a global leader in technology and innovation, supporting students through scholarships and mentorships.'
+    name: 'Redbull',
+    image: redbull,
+    description: 'Red Bull is the Sherlock Holmes of energy—sharp, relentless, and always two steps ahead, solving the mystery of fatigue before it strikes. As your energy partner, it’s the ultimate detective’s brew, fueling focus, wit, and the power to chase every clue to its thrilling conclusion.'
   },
   {
     id: 4,
     type: 'even',
-    name: 'Delta Solutions',
-    image: s,
-    description: 'Delta Solutions offers enterprise-grade software that streamlines business operations for all sizes.Alpha Corp is a global leader in technology and innovation, supporting students through scholarships and mentorships.'
-  },
-  {
-    id: 5,
-    type: 'odd',
-    name: 'Epsilon Media',
-    image: s,
-    description: 'Epsilon Media creates immersive storytelling experiences in film, gaming, and AR/VR formats.Alpha Corp is a global leader in technology and innovation, supporting students through scholarships and mentorships.'
-  },
-  {
-    id: 6,
-    type: 'even',
-    name: 'Zeta Labs',
-    image: s,
-    description: 'Zeta Labs is a biotech company researching solutions for next-generation healthcare.Alpha Corp is a global leader in technology and innovation, supporting students through scholarships and mentorships.'
+    name: 'Fwd by Myntra',
+    image: myntra,
+    description: 'Fwd by Myntra is the Sherlock Holmes of fashion—masterfully decoding style mysteries and uncovering the perfect look for every occasion. As your fashion partner, it crafts sharp, clever ensembles that reveal your unique identity, turning heads like a brilliant deduction in London’s foggy streets.'
   }
 ];
 

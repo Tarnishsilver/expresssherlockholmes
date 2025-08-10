@@ -308,7 +308,7 @@ const SlotMachine = () => {
                     </div>
 
                     <div className="text-center mt-4 min-h-[2rem]">
-                        <p className={`text-lg sm:text-xl font-semibold ${isSpinning ? 'text-gray-400' : 'text-green-400'}`}>
+                        <p className={`text-lg sm:text-xl font-bold ${isSpinning ? 'text-yellow-400' : 'text-yellow-400'}`}>
                             {message}
                         </p>
                     </div>

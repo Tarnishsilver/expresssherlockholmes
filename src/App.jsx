@@ -4,6 +4,7 @@ import HeroSection from './components/HeroSection'
 import Contact from './components/Contact'
 import Sponsors from './components/Sponsors'
 import Leaderboard from './components/Leaderboard'
+import LeaderWaiting from './components/LeaderWaiting'
 import "./images/flipped-hero-image.png"
 import './style.css'
 import { BrowserRouter as Router, Routes, Route , useLocation } from 'react-router-dom';
@@ -21,7 +22,8 @@ function AppWrapper() {
           <Route path="/" element={<HeroSection />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/sponsors" element={<Sponsors />} />
-          <Route path="/leaderboard" element={<Leaderboard />} />
+          {/* <Route path="/leaderboard" element={<Leaderboard />} /> */}
+          <Route path="/leaderboard" element={<LeaderWaiting />} />
         </Routes>
     </div>
   )
