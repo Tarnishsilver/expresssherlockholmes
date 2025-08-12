@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import fes from '../images/fesindia_logo.jpeg'; //sponser 1
 import omkar from '../images/omkar.png'; // sponser 2
-import travelis from '../images/travelis.png'; // sponser 3
+import travvellis from '../images/travvellis.png'; // sponser 3
 import redbull from '../images/redbull.jpeg'; // sponser 4
 import myntra from '../images/Myntra.png'; // sponser 5
 import smoke from '../images/smoke.gif';
@@ -36,6 +36,13 @@ const sponsors = [
     name: 'Fwd by Myntra',
     image: myntra,
     description: 'Fwd by Myntra is the Sherlock Holmes of fashion—masterfully decoding style mysteries and uncovering the perfect look for every occasion. As your fashion partner, it crafts sharp, clever ensembles that reveal your unique identity, turning heads like a brilliant deduction in London’s foggy streets.'
+  },
+  {
+    id: 5,
+    type: 'odd',
+    name: 'Travvellis',
+    image: travvellis,
+    description: 'Travvellis is the Sherlock Holmes of travel—meticulously sniffing out the most enchanting routes, hidden hideaways, and unforgettable experiences. As your travel detective, it solves the mystery of wanderlust with precision, turning every journey into a seamless adventure filled with surprising delights around every corner.'
   }
 ];
 
